@@ -141,15 +141,22 @@
   });
 
   document.querySelectorAll("[data-protect]").forEach(function (zone) {
+    function isInteractive(target) {
+      return target && target.closest && target.closest("input, textarea, select, button, a, label");
+    }
+
     zone.addEventListener("contextmenu", function (event) {
+      if (isInteractive(event.target)) return;
       event.preventDefault();
     });
 
     zone.addEventListener("dragstart", function (event) {
+      if (isInteractive(event.target)) return;
       event.preventDefault();
     });
 
     zone.addEventListener("selectstart", function (event) {
+      if (isInteractive(event.target)) return;
       event.preventDefault();
     });
   });

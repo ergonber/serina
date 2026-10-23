@@ -53,10 +53,16 @@ AddType application/manifest+json .webmanifest
   Header always set X-XSS-Protection "0"
   Header always set X-Permitted-Cross-Domain-Policies "none"
   Header always set Strict-Transport-Security "max-age=31536000; includeSubDomains" env=HTTPS
-  Header always set Content-Security-Policy "default-src 'self'; img-src 'self' data:; style-src 'self'; script-src 'self'; font-src 'self'; connect-src 'self'; object-src 'none'; base-uri 'self'; form-action 'none'; frame-ancestors 'none'; upgrade-insecure-requests"
+  Header always set Content-Security-Policy "default-src 'self'; img-src 'self' data: blob:; style-src 'self'; script-src 'self'; font-src 'self'; connect-src 'self'; object-src 'none'; base-uri 'self'; form-action 'none'; frame-ancestors 'none'; upgrade-insecure-requests"
 
   <FilesMatch "\.(webp|png|jpe?g|svg|ico)$">
     Header set X-Robots-Tag "noindex, noimageindex"
+  </FilesMatch>
+</IfModule>
+
+<IfModule mod_headers.c>
+  <FilesMatch "qr-pago\.(png|webp)$">
+    Header set Cache-Control "public, max-age=300, must-revalidate"
   </FilesMatch>
 </IfModule>
 

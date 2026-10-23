@@ -3,6 +3,7 @@ Allow: /
 Disallow: /assets/img/
 Allow: /assets/img/og-image.jpg
 Disallow: /legal.html
+Disallow: /pedido.html
 Disallow: /404.html
 Disallow: /*.md$
 Disallow: /*.log$
