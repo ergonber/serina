@@ -154,6 +154,150 @@
     });
   });
 
+
+  document.querySelectorAll("[data-carousel]").forEach(function (carousel) {
+    var viewport = carousel.querySelector(".carousel-viewport");
+    var track = carousel.querySelector(".carousel-track");
+    var slides = Array.prototype.slice.call(carousel.querySelectorAll(".carousel-slide"));
+    var dots = Array.prototype.slice.call(carousel.querySelectorAll(".carousel-dot"));
+    var count = carousel.querySelector(".carousel-count");
+    var playBtn = carousel.querySelector(".carousel-play");
+    var prevBtn = carousel.querySelector(".carousel-prev");
+    var nextBtn = carousel.querySelector(".carousel-next");
+    var reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    var playing = !reduceMotion;
+    var index = 0;
+    var timer = null;
+    var startX = null;
+
+    if (!viewport || !track || !slides.length) return;
+
+    function updateUi() {
+      slides.forEach(function (slide, i) {
+        slide.classList.toggle("is-active", i === index);
+        slide.setAttribute("aria-hidden", i === index ? "false" : "true");
+      });
+
+      dots.forEach(function (dot, i) {
+        dot.classList.toggle("is-active", i === index);
+        if (i === index) {
+          dot.setAttribute("aria-current", "true");
+        } else {
+          dot.removeAttribute("aria-current");
+        }
+      });
+
+      if (count) count.textContent = (index + 1) + " / " + slides.length;
+    }
+
+    function updatePlayButton() {
+      if (!playBtn) return;
+      playBtn.setAttribute("aria-label", playing ? "Pausar carrusel" : "Reproducir carrusel");
+      var pauseIcon = playBtn.querySelector(".icon-pause");
+      var playIcon = playBtn.querySelector(".icon-play");
+      if (pauseIcon) pauseIcon.hidden = !playing;
+      if (playIcon) playIcon.hidden = playing;
+    }
+
+    function stop() {
+      if (timer) {
+        window.clearInterval(timer);
+        timer = null;
+      }
+    }
+
+    function start() {
+      if (!playing) return;
+      stop();
+      timer = window.setInterval(function () {
+        go(index + 1);
+      }, 6500);
+    }
+
+    function go(nextIndex) {
+      index = ((nextIndex % slides.length) + slides.length) % slides.length;
+      track.style.transform = "translateX(-" + index * 100 + "%)";
+      updateUi();
+    }
+
+    function goManual(nextIndex) {
+      go(nextIndex);
+      if (playing) {
+        stop();
+        start();
+      }
+    }
+
+    if (prevBtn) {
+      prevBtn.addEventListener("click", function () {
+        goManual(index - 1);
+      });
+    }
+
+    if (nextBtn) {
+      nextBtn.addEventListener("click", function () {
+        goManual(index + 1);
+      });
+    }
+
+    dots.forEach(function (dot, i) {
+      dot.addEventListener("click", function () {
+        goManual(i);
+      });
+    });
+
+    if (playBtn) {
+      playBtn.addEventListener("click", function () {
+        playing = !playing;
+        updatePlayButton();
+        if (playing) {
+          start();
+        } else {
+          stop();
+        }
+      });
+    }
+
+    carousel.addEventListener("mouseenter", stop);
+    carousel.addEventListener("mouseleave", start);
+    carousel.addEventListener("focusin", stop);
+    carousel.addEventListener("focusout", function (event) {
+      if (!carousel.contains(event.relatedTarget)) start();
+    });
+
+    carousel.addEventListener("keydown", function (event) {
+      if (event.key === "ArrowLeft") {
+        event.preventDefault();
+        goManual(index - 1);
+      } else if (event.key === "ArrowRight") {
+        event.preventDefault();
+        goManual(index + 1);
+      }
+    });
+
+    viewport.addEventListener("pointerdown", function (event) {
+      if (event.target.closest("button")) return;
+      startX = event.clientX;
+    });
+
+    viewport.addEventListener("pointerup", function (event) {
+      if (startX === null) return;
+      var distance = event.clientX - startX;
+      startX = null;
+      if (Math.abs(distance) > 42) {
+        goManual(index + (distance < 0 ? 1 : -1));
+      }
+    });
+
+    viewport.addEventListener("pointercancel", function () {
+      startX = null;
+    });
+
+    updateUi();
+    updatePlayButton();
+    start();
+  });
+
   document.querySelectorAll("img").forEach(function (img) {
     img.setAttribute("draggable", "false");
   });

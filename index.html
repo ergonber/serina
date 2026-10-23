@@ -295,13 +295,54 @@
 
     <section class="section ritual" id="ritual">
       <div class="container split">
-        <div class="split-media img-protect reveal" data-protect>
-          <img src="assets/img/lifestyle-1200.webp" srcset="assets/img/lifestyle-800.webp 800w, assets/img/lifestyle-1200.webp 1126w" sizes="(max-width: 900px) 100vw, 560px" width="1126" height="1407" alt="Crema Serina en una mesa de madera junto a una planta" loading="lazy" decoding="async" draggable="false">
-          <span class="watermark" aria-hidden="true">© Serina</span>
-          <div class="media-badge">
-            <span>Hecho en</span>
-            <strong>Cochabamba</strong>
-            <span>Bolivia</span>
+        <div class="carousel-wrap reveal" data-carousel data-protect role="group" aria-roledescription="carrusel" aria-label="Galería de cremas Serina" tabindex="0">
+          <div class="carousel-viewport">
+            <div class="carousel-track">
+          <figure class="carousel-slide is-active" role="group" aria-roledescription="diapositiva" aria-label="1 de 6">
+            <img class="carousel-backdrop" src="assets/img/carousel/carousel-negra-2.webp" alt="" aria-hidden="true" decoding="async" draggable="false">
+            <img class="carousel-img" src="assets/img/carousel/carousel-negra-2.webp" width="518" height="753" alt="Modelo junto a la crema facial Serina en bote negro" decoding="async" draggable="false">
+          </figure>
+          <figure class="carousel-slide" role="group" aria-roledescription="diapositiva" aria-label="2 de 6" aria-hidden="true">
+            <img class="carousel-backdrop" src="assets/img/carousel/carousel-negra-1.webp" alt="" aria-hidden="true" decoding="async" draggable="false">
+            <img class="carousel-img" src="assets/img/carousel/carousel-negra-1.webp" width="1024" height="772" alt="Crema facial Serina Hidratante Nutritiva 250 ml en bote negro" decoding="async" draggable="false">
+          </figure>
+          <figure class="carousel-slide" role="group" aria-roledescription="diapositiva" aria-label="3 de 6" aria-hidden="true">
+            <img class="carousel-backdrop" src="assets/img/carousel/carousel-negra-3.webp" alt="" aria-hidden="true" decoding="async" draggable="false">
+            <img class="carousel-img" src="assets/img/carousel/carousel-negra-3.webp" width="492" height="686" alt="Crema facial Serina en bote negro con Vitamina E" decoding="async" draggable="false">
+          </figure>
+          <figure class="carousel-slide" role="group" aria-roledescription="diapositiva" aria-label="4 de 6" aria-hidden="true">
+            <img class="carousel-backdrop" src="assets/img/carousel/carousel-corporal-2.webp" alt="" aria-hidden="true" decoding="async" draggable="false">
+            <img class="carousel-img" src="assets/img/carousel/carousel-corporal-2.webp" width="581" height="603" alt="Modelo junto a la crema corporal Serina" decoding="async" draggable="false">
+          </figure>
+          <figure class="carousel-slide" role="group" aria-roledescription="diapositiva" aria-label="5 de 6" aria-hidden="true">
+            <img class="carousel-backdrop" src="assets/img/carousel/carousel-corporal-1.webp" alt="" aria-hidden="true" decoding="async" draggable="false">
+            <img class="carousel-img" src="assets/img/carousel/carousel-corporal-1.webp" width="715" height="1199" alt="Crema corporal Serina Hidratante Nutritiva 500 ml" decoding="async" draggable="false">
+          </figure>
+          <figure class="carousel-slide" role="group" aria-roledescription="diapositiva" aria-label="6 de 6" aria-hidden="true">
+            <img class="carousel-backdrop" src="assets/img/carousel/carousel-corporal-3.webp" alt="" aria-hidden="true" decoding="async" draggable="false">
+            <img class="carousel-img" src="assets/img/carousel/carousel-corporal-3.webp" width="576" height="582" alt="Crema corporal Serina con Vitamina E y lípidos nutritivos" decoding="async" draggable="false">
+          </figure>
+            </div>
+            <button class="carousel-btn carousel-prev" type="button" aria-label="Imagen anterior">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 12H6"/><path d="m11 6-7 6 7 6"/></svg>
+            </button>
+            <button class="carousel-btn carousel-next" type="button" aria-label="Imagen siguiente">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h13"/><path d="m13 6 6 6-6 6"/></svg>
+            </button>
+            <span class="watermark" aria-hidden="true">© Serina</span>
+          </div>
+          <div class="carousel-footer">
+            <span class="carousel-caption"><span class="caption-dot" aria-hidden="true"></span> Hecho en Cochabamba</span>
+            <div class="carousel-dots" role="group" aria-label="Seleccionar imagen">
+              <button class="carousel-dot is-active" type="button" aria-label="Ir a la imagen 1" aria-current="true"></button><button class="carousel-dot" type="button" aria-label="Ir a la imagen 2"></button><button class="carousel-dot" type="button" aria-label="Ir a la imagen 3"></button><button class="carousel-dot" type="button" aria-label="Ir a la imagen 4"></button><button class="carousel-dot" type="button" aria-label="Ir a la imagen 5"></button><button class="carousel-dot" type="button" aria-label="Ir a la imagen 6"></button>
+            </div>
+            <div class="carousel-meta">
+              <span class="carousel-count" aria-live="polite">1 / 6</span>
+              <button class="carousel-play" type="button" aria-label="Pausar carrusel">
+                <svg class="icon-pause" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><rect x="7" y="5" width="3.5" height="14" rx="1"/><rect x="13.5" y="5" width="3.5" height="14" rx="1"/></svg>
+                <svg class="icon-play" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" hidden><path d="M8 5.5v13l11-6.5-11-6.5Z"/></svg>
+              </button>
+            </div>
           </div>
         </div>
         <div class="split-copy">
