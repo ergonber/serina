@@ -100,15 +100,20 @@
     <button id="closePayment" class="payment-close" type="button" aria-label="Cerrar pago">&times;</button>
     <div class="payment-inner">
       <div class="payment-grid">
-        <section class="payment-qr" data-protect>
+        <section class="payment-qr">
           <p class="eyebrow"><span class="eyebrow-line" aria-hidden="true"></span> Pago con QR</p>
           <h2 id="paymentTitle">Escanea y paga</h2>
           <p class="payment-amount-label">Monto exacto</p>
           <strong id="paymentAmount" class="payment-amount">Bs. 0</strong>
-          <div class="qr-frame">
-            <img id="qrImage" src="assets/img/pago/qr-pago.png" width="600" height="600" alt="QR de pago de Serina">
+          <div class="qr-frame" data-protect>
+            <img id="qrImage" src="assets/img/pago/qr-mercantil.png" width="820" height="820" alt="QR de pago de Mercantil Santa Cruz">
           </div>
           <p class="qr-hint">Abre tu app bancaria, escanea el QR e ingresa exactamente este monto.</p>
+          <p class="qr-bank">Mercantil Santa Cruz</p>
+          <dl class="qr-account">
+            <div><dt>Titular</dt><dd>Ernesto Emilio Gonzales Bermudez</dd></div>
+            <div><dt>Cuenta</dt><dd>1014639752</dd></div>
+          </dl>
           <button id="copyAmount" class="btn btn-ghost btn-sm" type="button">Copiar monto</button>
           <p id="qrNotice" class="qr-notice" hidden>QR de demostración. Configura el QR real de Serina antes de publicar.</p>
         </section>

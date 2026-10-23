@@ -499,7 +499,7 @@ body.payment-open {
 }
 
 .qr-frame {
-  width: min(258px, 82%);
+  width: min(300px, 86%);
   margin: 0 auto 14px;
   padding: 10px;
   border-radius: 16px;
@@ -519,6 +519,49 @@ body.payment-open {
   color: var(--ink-soft);
   font-size: 11px;
   line-height: 1.55;
+}
+
+.qr-bank {
+  margin: 0 0 6px;
+  color: #2f6b45;
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.qr-account {
+  display: grid;
+  gap: 4px;
+  max-width: 280px;
+  margin: 0 auto 14px;
+  padding: 10px 12px;
+  border: 1px solid rgba(47, 107, 69, 0.16);
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.42);
+  text-align: left;
+}
+
+.qr-account div {
+  display: grid;
+  grid-template-columns: 52px minmax(0, 1fr);
+  gap: 8px;
+}
+
+.qr-account dt {
+  color: var(--muted);
+  font-size: 8px;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.qr-account dd {
+  margin: 0;
+  color: var(--ink);
+  font-size: 10px;
+  line-height: 1.4;
+  overflow-wrap: anywhere;
 }
 
 .qr-notice {

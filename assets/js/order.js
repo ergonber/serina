@@ -296,10 +296,10 @@
     if (paymentAmount) paymentAmount.textContent = money(total);
 
     if (qrImage) {
-      qrImage.src = config.qrImage || "assets/img/pago/qr-pago.png";
+      qrImage.src = config.qrImage || "assets/img/pago/qr-mercantil.png";
       qrImage.alt = config.qrReady === false
         ? "QR de pago pendiente de configurar"
-        : "QR de pago de Serina";
+        : "QR de pago de Mercantil Santa Cruz";
     }
 
     if (qrNotice) {

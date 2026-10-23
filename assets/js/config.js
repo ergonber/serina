@@ -14,9 +14,9 @@ window.SERINA_CONFIG = {
   phoneDisplay: "+591 783 02116",
   domain: "https://serina.bo",
   currency: "Bs.",
-  // Cambia qrReady a true y reemplaza assets/img/pago/qr-pago.png con tu QR real.
-  qrReady: false,
-  qrImage: "assets/img/pago/qr-pago.png",
+  // QR de pago configurado. Si cambia, reemplaza qr-mercantil.png y mantén qrReady en true.
+  qrReady: true,
+  qrImage: "assets/img/pago/qr-mercantil.png",
   // Ajusta aquí precios y nombres cuando cambien.
   products: [
     {

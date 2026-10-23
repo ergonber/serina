@@ -61,7 +61,7 @@ AddType application/manifest+json .webmanifest
 </IfModule>
 
 <IfModule mod_headers.c>
-  <FilesMatch "qr-pago\.(png|webp)$">
+  <FilesMatch "qr-mercantil\.(png|webp)$">
     Header set Cache-Control "public, max-age=300, must-revalidate"
   </FilesMatch>
 </IfModule>
