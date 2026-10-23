@@ -1,0 +1,26 @@
+{
+  "name": "Serina Skin Care",
+  "short_name": "Serina",
+  "description": "Cremas faciales y corporales hechas en Cochabamba, Bolivia.",
+  "lang": "es-BO",
+  "dir": "ltr",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "background_color": "#faf4ea",
+  "theme_color": "#faf4ea",
+  "icons": [
+    {
+      "src": "assets/img/brand/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "assets/img/brand/apple-touch-icon.png",
+      "sizes": "180x180",
+      "type": "image/png",
+      "purpose": "any"
+    }
+  ]
+}
