@@ -12,7 +12,7 @@ window.SERINA_CONFIG = {
   city: "Cochabamba, Bolivia",
   address: "Av. Humboldt #234, Oficinas Liberland, Cochabamba, Bolivia",
   phoneDisplay: "+591 783 02116",
-  domain: "https://serina.bo",
+  domain: "https://serina.ethbol.com",
   currency: "Bs.",
   // QR de pago configurado. Si cambia, reemplaza qr-mercantil.png y mantén qrReady en true.
   qrReady: true,

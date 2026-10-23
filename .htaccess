@@ -1,5 +1,5 @@
 # Serina Skin Care - configuración Apache
-# Cambia serina.bo por el dominio real antes de publicar.
+# Dominio de producción: serina.ethbol.com
 
 Options -Indexes -MultiViews
 DirectoryIndex index.html
@@ -17,7 +17,7 @@ ServerSignature Off
   # Protección básica contra hotlinking de imágenes.
   # Los enlaces directos (sin referer) se permiten para no romper apps.
   RewriteCond %{HTTP_REFERER} !^$
-  RewriteCond %{HTTP_REFERER} !^https?://(www\.)?serina\.bo [NC]
+  RewriteCond %{HTTP_REFERER} !^https?://(www\.)?serina\.ethbol\.com [NC]
   RewriteCond %{HTTP_REFERER} !localhost [NC]
   RewriteCond %{HTTP_REFERER} !127\.0\.0\.1 [NC]
   RewriteCond %{HTTP_REFERER} !facebook\.com [NC]

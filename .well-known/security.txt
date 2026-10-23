@@ -1,4 +1,4 @@
-Contact: https://serina.bo/legal.html#privacidad
+Contact: https://serina.ethbol.com/legal.html#privacidad
 Expires: 2027-12-31T23:59:00.000Z
 Preferred-Languages: es
-Canonical: https://serina.bo/.well-known/security.txt
+Canonical: https://serina.ethbol.com/.well-known/security.txt

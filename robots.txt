@@ -61,4 +61,4 @@ Disallow: /
 User-agent: YouBot
 Disallow: /
 
-Sitemap: https://serina.bo/sitemap.xml
+Sitemap: https://serina.ethbol.com/sitemap.xml
