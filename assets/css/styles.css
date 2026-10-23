@@ -870,7 +870,7 @@ h2 em {
 
 .product-grid {
   display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
+  grid-template-columns: repeat(4, minmax(0, 1fr));
   gap: 22px;
 }
 
@@ -902,6 +902,10 @@ h2 em {
 
 .card-atopic {
   background: linear-gradient(155deg, #e9efe3 0%, #dce7d5 100%);
+}
+
+.card-black {
+  background: linear-gradient(155deg, #e9e4dc 0%, #ded6cb 100%);
 }
 
 .card-top {
@@ -965,6 +969,10 @@ h2 em {
 
 .card-atopic .stage-circle {
   background: rgba(255, 252, 246, 0.3);
+}
+
+.card-black .stage-circle {
+  background: rgba(255, 252, 246, 0.28);
 }
 
 .card-stage img {
@@ -1565,7 +1573,7 @@ details[open] .faq-plus {
   position: relative;
   z-index: 2;
   width: auto;
-  height: 540px;
+  height: 500px;
   max-width: 100%;
   filter: drop-shadow(0 30px 30px rgba(70, 25, 18, 0.28));
 }
@@ -1930,6 +1938,12 @@ details[open] .faq-plus {
 }
 
 /* Responsive */
+@media (max-width: 1279px) {
+  .product-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
 @media (max-width: 1080px) {
   .hero-visual {
     min-height: 570px;
@@ -2444,6 +2458,39 @@ details[open] .faq-plus {
 
   .legal-shell h1 {
     font-size: 46px;
+  }
+}
+
+@media (min-width: 1280px) {
+  .product-card {
+    min-height: 640px;
+    padding: 20px;
+  }
+
+  .card-stage {
+    height: 320px;
+  }
+
+  .card-stage img {
+    height: 312px;
+  }
+
+  .stage-circle {
+    width: 238px;
+  }
+
+  .card-body h3,
+  .card-atopic .card-body h3 {
+    font-size: 30px;
+  }
+
+  .card-desc {
+    font-size: 12.5px;
+  }
+
+  .chips li {
+    padding: 5px 8px;
+    font-size: 8.5px;
   }
 }
 
